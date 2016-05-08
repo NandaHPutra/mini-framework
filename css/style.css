@@ -1,0 +1,14 @@
+#loginform{
+    width: 400px; 
+    height: auto; 
+    margin-left: -200px;
+    margin-top: -150px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+a, a:hover, a:active, a:focus {
+   outline: 0;
+}
