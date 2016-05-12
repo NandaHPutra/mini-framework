@@ -1,8 +1,6 @@
 <?php
 
-const tables = array (    
-    "null"     => array("null") //DO NOT CHANGE THIS
-);
+const tables = array (" null"     => array("null") ); //DO NOT CHANGE THIS
 
 function db_insert($table, $params) {
     $conn = new mysqli($cfgs['db_host'],$cfgs['db_username'],$cfgs['db_password'],$cfgs['db_name']);
@@ -16,10 +14,10 @@ function db_insert($table, $params) {
         $query .= ")";
         
         if ($result = $conn->query($query)){
-            return $query;
+            return true;
         }
         else {
-          return $query;
+          return false;
         }
         $conn->close();
     }
@@ -93,7 +91,7 @@ function db_select_wheres($table, $columns, $params){
     else{ return false; }
 }
 
-function db_select_custom($query){
+function db_custom($query){
     $conn = new mysqli($cfgs['db_host'],$cfgs['db_username'],$cfgs['db_password'],$cfgs['db_name']);
     if(!$conn->connect_errno){
         $result = $conn->query($query);
@@ -114,11 +112,11 @@ function db_select_custom($query){
 
 
 function db_update_where($table, $column, $param, $wherecolumn, $whereparam){
-    //
+    
 }
 
 function db_update_wheres($table, $columns, $params, $wherecolumns, $whereparams){
-    //
+    
 }
 
 function db_delete_where($table, $column, $param){

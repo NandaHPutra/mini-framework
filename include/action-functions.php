@@ -22,7 +22,7 @@ function random_string($length) {
     return $randomString;
 }
 
-function upload_file($name){
+function upload_file($filename){
     $target_dir = "uploads/";
     $target_file = $target_dir . basename($_FILES["$name"]["name"]);
     move_uploaded_file($_FILES["$name"]["tmp_name"], $target_file);
